@@ -17,7 +17,7 @@ window.addEventListener("load", function() {
     var abi = JSON.parse('[{"constant":false,"inputs":[{"name":"message","type":"string"}],"name":"record","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"anonymous":false,"inputs":[{"indexed":false,"name":"_from","type":"address"},{"indexed":false,"name":"_message","type":"string"}],"name":"Record","type":"event"}]');
 
     // eventer contract address
-    var address = "0x258F4A2B9318849a92BfF86dBf8daD166617Ec96";
+    var address = "0x2c834101ed0894c5c7abc694e21f3c61eebeb417";
 
     var eventer = web3.eth.contract(abi).at(address);
     var eventer_remote = web3_remote.eth.contract(abi).at(address);

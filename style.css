@@ -69,6 +69,12 @@ div#chain {
   display: none;
 }
 
+form#recorder a {
+  display: block;
+  font-size: 0.9em;
+  margin: 0.5em 0 1.5em 0;
+}
+
 div#log {
   font-size: 0.9em;
 }
