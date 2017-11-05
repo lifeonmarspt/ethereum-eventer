@@ -1,0 +1,81 @@
+*, :after, :before {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  color: #666;
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav {
+  padding: 20px;
+  background: #e74c3c;
+  margin-bottom: 50px;
+}
+
+.nav-contents {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.nav-contents a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.nav-contents a img {
+  margin-right: 10px;
+  width: 50px;
+}
+
+#container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  color: #333;
+  font-weight: normal;
+}
+
+hr {
+  border-width: 1px 0 0;
+  margin: 2em 0 1em;
+}
+
+p#no-metamask {
+  display: none;
+}
+
+div#chain {
+  display: none;
+}
+
+div#log {
+  font-size: 0.9em;
+}
+
+p.message:not(:last-child)::after {
+  content: "·";
+  display: block;
+  line-height: 0;
+  margin: 1em;
+}

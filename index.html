@@ -1,10 +1,54 @@
-<!--<script src="web3.js"></script>-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Forever On The Chain</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<form id="recorder">
-<input type="text">
-<input type="submit">
-<a target="_blank"></a>
-</form>
-<div id="log"></div>
+    <meta property="og:title" content="Forever On The Chain"/>
+    <meta property="og:site_name" content="Forever On The Chain"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="http://ethereum-eventer.s3-website-us-west-2.amazonaws.com/"/>
+    <meta property="og:image" content="https://lifeonmars.pt/img/og.jpg"/>
+    <meta property="og:description" content="Etch a permanent message into the Ethereum blockchain."/>
 
-<script src="script.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
+
+    <!-- uncomment to load local web3 -->
+    <!--<script src="web3.js"></script>-->
+  </head>
+  <body>
+    <nav>
+      <div class="nav-contents">
+        <a href="https://lifeonmars.pt" target="_blank">
+          <img src="https://lifeonmars.pt/img/lom.png">
+          Life on Mars
+        </a>
+      </div>
+    </nav>
+
+    <div id="container">
+      <h1>Forever On The Chain</h1>
+      <p>Etch a permanent message into the Ethereum blockchain.</p>
+
+      <hr>
+
+      <p id="no-metamask">You need MetaMask to continue.</p>
+      <div id="chain">
+        <form id="recorder">
+          <input type="text" placeholder="Write your message">
+          <input type="submit" value="Save">
+          <a target="_blank"></a>
+        </form>
+
+        <div id="log">
+          <p id="loading">(loading messages...)</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
