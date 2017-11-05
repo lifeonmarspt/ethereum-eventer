@@ -56,6 +56,13 @@ h1 {
   font-weight: normal;
 }
 
+h2 {
+  color: #333;
+  font-size: 1.0em;
+  margin-top: 2.5em;
+  margin-bottom: 1.5em;
+}
+
 hr {
   border-width: 1px 0 0;
   margin: 2em 0 1em;
@@ -65,7 +72,7 @@ p#no-metamask {
   display: none;
 }
 
-div#chain {
+form#recorder {
   display: none;
 }
 

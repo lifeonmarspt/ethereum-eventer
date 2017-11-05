@@ -1,8 +1,19 @@
+// eventer contract ABI
+var abi = JSON.parse('[{"constant":false,"inputs":[{"name":"message","type":"string"}],"name":"record","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"anonymous":false,"inputs":[{"indexed":false,"name":"_from","type":"address"},{"indexed":false,"name":"_message","type":"string"}],"name":"Record","type":"event"}]');
+
+// eventer contract address
+var address = "0x2c834101ed0894c5c7abc694e21f3c61eebeb417";
+
 window.addEventListener("load", function() {
   // Checking if Web3 has been injected by the browser (Mist/MetaMask)
   if (typeof web3 !== 'undefined') {
     // Use MetaMask's provider
     window.web3 = new Web3(web3.currentProvider);
+    var eventer = web3.eth.contract(abi).at(address);
+    document.querySelector("form#recorder").style.display = "block";
+  } else {
+    document.querySelector("p#no-metamask").style.display = "block";
+  }
 
     // use local rpc server instead of MetaMask
     //var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
@@ -13,13 +24,6 @@ window.addEventListener("load", function() {
     // select default account (for use without MetaMask)
     //web3.eth.defaultAccount = "0x13f53d42fc7cf4f1cf4ca8031a526f6a8528cdfa";
 
-    // eventer contract ABI
-    var abi = JSON.parse('[{"constant":false,"inputs":[{"name":"message","type":"string"}],"name":"record","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"anonymous":false,"inputs":[{"indexed":false,"name":"_from","type":"address"},{"indexed":false,"name":"_message","type":"string"}],"name":"Record","type":"event"}]');
-
-    // eventer contract address
-    var address = "0x2c834101ed0894c5c7abc694e21f3c61eebeb417";
-
-    var eventer = web3.eth.contract(abi).at(address);
     var eventer_remote = web3_remote.eth.contract(abi).at(address);
 
     document.querySelector("div#chain").style.display = "block";
@@ -71,7 +75,4 @@ window.addEventListener("load", function() {
       p.textContent = result.args._message;
       logDiv.prepend(p);
     });
-  } else {
-    document.querySelector("p#no-metamask").style.display = "block";
-  }
 });

@@ -16,8 +16,7 @@
     <link href="style.css" rel="stylesheet" type="text/css" media="all"/>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
 
-    <!-- uncomment to load local web3 -->
-    <!--<script src="web3.js"></script>-->
+    <script src="web3.js"></script>
   </head>
   <body>
     <nav>
@@ -35,14 +34,15 @@
 
       <hr>
 
-      <p id="no-metamask">You need <a href="https://metamask.io/" target="_blank">MetaMask</a> to continue.</p>
       <div id="chain">
+        <p id="no-metamask">(You need <a href="https://metamask.io/" target="_blank">MetaMask</a> to write to the blockchain.)</p>
         <form id="recorder">
           <input type="text" placeholder="Write your message">
           <input type="submit" value="Save">
           <a target="_blank"></a>
         </form>
 
+        <h2>Saved messages</h2>
         <div id="log">
           <p id="loading">(loading messages...)</p>
         </div>
