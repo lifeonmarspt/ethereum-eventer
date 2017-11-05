@@ -54,6 +54,26 @@ nav {
 h1 {
   color: #333;
   font-weight: normal;
+  margin-bottom: 0.2em;
+}
+
+p#tagline {
+  margin-top: 0;
+}
+
+p#github {
+  font-size: 0.8em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+p#github {
+  line-height: 0;
+}
+
+p#github img {
+  height: 1.4em;
 }
 
 h2 {
