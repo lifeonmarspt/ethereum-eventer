@@ -1,0 +1,11 @@
+version: 2
+
+jobs:
+  build:
+    working_directory: ~
+    docker:
+      - image: python:3.6.0
+    steps:
+      - checkout
+      - run: pip install awscli
+      - run: aws s3 sync --delete --acl="public-read" public/ s3://lifeonmars-static-websites/forever.lifeonmars.pt
