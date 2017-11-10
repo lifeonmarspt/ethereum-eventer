@@ -19,7 +19,7 @@ window.addEventListener("load", function() {
     //var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
 
     // use remote rpc server
-    var web3_remote = new Web3(new Web3.providers.HttpProvider("http://ec2-34-213-193-94.us-west-2.compute.amazonaws.com:8545"));
+    var web3_remote = new Web3(new Web3.providers.HttpProvider("http://ec2-52-91-214-42.compute-1.amazonaws.com:8545"));
 
     // select default account (for use without MetaMask)
     //web3.eth.defaultAccount = "0x13f53d42fc7cf4f1cf4ca8031a526f6a8528cdfa";
