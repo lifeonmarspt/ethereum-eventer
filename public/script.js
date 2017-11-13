@@ -4,6 +4,8 @@ var abi = JSON.parse('[{"constant":false,"inputs":[{"name":"message","type":"str
 // eventer contract address
 var address = "0x2c834101ed0894c5c7abc694e21f3c61eebeb417";
 
+var remoteRpcProvider = "https://forever-geth.lifeonmars.pt";
+
 window.addEventListener("load", function() {
   // Checking if Web3 has been injected by the browser (Mist/MetaMask)
   if (typeof web3 !== 'undefined') {
@@ -19,7 +21,7 @@ window.addEventListener("load", function() {
     //var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
 
     // use remote rpc server
-    var web3_remote = new Web3(new Web3.providers.HttpProvider("http://ec2-52-91-214-42.compute-1.amazonaws.com:8545"));
+    var web3_remote = new Web3(new Web3.providers.HttpProvider(remoteRpcProvider));
 
     // select default account (for use without MetaMask)
     //web3.eth.defaultAccount = "0x13f53d42fc7cf4f1cf4ca8031a526f6a8528cdfa";
