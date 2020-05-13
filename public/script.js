@@ -4,9 +4,7 @@ var abi = JSON.parse('[{"constant":false,"inputs":[{"name":"message","type":"str
 // eventer contract address
 var address = "0x2c834101ed0894c5c7abc694e21f3c61eebeb417";
 
-var remoteRpcProvider = "https://forever-geth.lifeonmars.pt";
-
-window.addEventListener("load", function() {
+function loadWeb3(provider) {
   // Checking if Web3 has been injected by the browser (Mist/MetaMask)
   if (typeof web3 !== 'undefined') {
     // Use MetaMask's provider
@@ -21,7 +19,7 @@ window.addEventListener("load", function() {
     //var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
 
     // use remote rpc server
-    var web3_remote = new Web3(new Web3.providers.HttpProvider(remoteRpcProvider));
+    var web3_remote = new Web3(new Web3.providers.HttpProvider(provider));
 
     // select default account (for use without MetaMask)
     //web3.eth.defaultAccount = "0x13f53d42fc7cf4f1cf4ca8031a526f6a8528cdfa";
@@ -72,9 +70,25 @@ window.addEventListener("load", function() {
     // get old and watch for new Record events
     eventer_remote.Record({}, {fromBlock: 4491369, toBlock: "latest"}).watch(function (error, result) {
       if (loadingP) { loadingP.remove(); }
-      var p = document.createElement("p");
-      p.className = "message";
-      p.textContent = result.args._message;
-      logDiv.prepend(p);
+
+      if (error) {
+        var p = document.createElement("p");
+        p.className = "message";
+        p.textContent = "Error talking to " + provider + ": " + error;
+        logDiv.prepend(p);
+      } else {
+        var p = document.createElement("p");
+        p.className = "message";
+        p.textContent = result.args._message;
+        logDiv.prepend(p);
+      }
     });
+}
+
+window.addEventListener("load", function() {
+  document.querySelector("#provider").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    loadWeb3(document.querySelector("#provider input[type=text]").value);
+  });
 });

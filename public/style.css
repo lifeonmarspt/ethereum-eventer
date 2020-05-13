@@ -63,17 +63,11 @@ p#tagline {
 
 p#github {
   font-size: 0.8em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-p#github {
-  line-height: 0;
 }
 
 p#github img {
   height: 1.4em;
+  vertical-align: bottom;
 }
 
 h2 {
@@ -111,4 +105,8 @@ p.message:not(:last-child)::after {
   display: block;
   line-height: 0;
   margin: 1em;
+}
+
+#chain {
+  display: none;
 }
